@@ -111,8 +111,34 @@ b, strong {
   display: inline-block;
   vertical-align: top;
   margin-top: 5px;
-  min-width: 260px;
+  min-width: 400px;
   position: relative;
+}
+
+.project {
+  /* Background color for the section */
+  padding: 50px 0;
+}
+
+.project h2 {
+  font-size: 28px;
+  color: #333; /* Title color */
+  margin-bottom: 30px;
+}
+
+.project-info {
+  background-color: #fff; /* Background color for project cards */
+  border: 0px solid #ddd; /* Border color for project cards */
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1); /* Box shadow for project cards */
+}
+
+.project-info img {
+  max-width: 100%;
+  height: 150px;
+  border-radius: 10px;
 }
 
 .animated-item {
