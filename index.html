@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -14,9 +14,48 @@
   <link rel="stylesheet" href="css/unicons.css">
   <link rel="stylesheet" href="css/owl.carousel.min.css">
   <link rel="stylesheet" href="css/owl.theme.default.min.css">
-
-  <!-- MAIN STYLE -->
   <link rel="stylesheet" href="css/tooplate-style.css">
+
+  <style>
+    /* Popup Notification Styling */
+    #payment-popup {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: #fff;
+      color: #333;
+      padding: 15px 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      font-size: 14px;
+      z-index: 9999;
+      display: none;
+      max-width: 280px;
+      animation: fadeInOut 5s ease-in-out;
+    }
+
+    @keyframes fadeInOut {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      10% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      90% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      100% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -31,7 +70,6 @@
           </h1>
           <span><strong>content hari-hari, <br>tapi tak jana income? Rugi kot!</strong> </span>
         </div>
-
       </div>
       <div class="row">
         <div class="col">
@@ -39,16 +77,13 @@
             <div class="sold-out-badge">12.5K Sold</div>
             <img src="images/ebook.png" class="img-fluid mt-4" alt="project image">
 
-            <!-- Price with slash and discount -->
             <div class="mt-3">
               <p style="margin: 0; font-size: 18px; color: #888;">
                 <del>RM119.00</del>
               </p>
               <h4 style="font-weight: bold; color: red;">RM79.00</h4>
-
             </div>
 
-            <!-- Button -->
             <div class="custom-btn-group">
               <a class="btn btn-lg"
                 style="background-color: #ccc; color: #666; border: 2px solid #999; font-size: 16px; pointer-events: none; cursor: not-allowed; opacity: 0.6;">
@@ -58,10 +93,10 @@
           </div>
         </div>
       </div>
-
     </div>
   </section>
-  <footer class=" py-3 mt-auto">
+
+  <footer class="py-3 mt-auto">
     <div class="container text-center">
       <p class="mb-0">
         <strong>Copyright &copy;
@@ -71,8 +106,53 @@
     </div>
   </footer>
 
+  <!-- Fake Payment Popup -->
+  <div id="payment-popup">
+    <strong id="popup-text">Someone just paid!</strong>
+  </div>
+
   <script>
     document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+    const names = ["Ali", "Sarah", "John", "Nur", "David", "Maya", "Arif", "Lisa", "Ahmad", "Siti"];
+    const domains = ["gmail.com"];
+
+    function randomEmail() {
+      const name = names[Math.floor(Math.random() * names.length)];
+      const number = Math.floor(Math.random() * 1000);
+      const domain = domains[Math.floor(Math.random() * domains.length)];
+      return `${name.toLowerCase()}${number}@${domain}`;
+    }
+
+    function showPaymentPopup() {
+      const popup = document.getElementById("payment-popup");
+      const email = randomEmail();
+      const minutesAgo = Math.floor(Math.random() * 5) + 1;
+
+      document.getElementById("popup-text").innerHTML = `
+        <strong>${email}</strong> has just purchased this eBook<br>
+        <small>${minutesAgo} minute(s) ago</small>
+      `;
+
+      popup.style.display = "block";
+
+      // Hide after 5 seconds
+      setTimeout(() => {
+        popup.style.display = "none";
+      }, 5000);
+    }
+
+    // Loop with random interval
+    function startPopupLoop() {
+      const interval = Math.floor(Math.random() * 2000) + 2000; // 20s–40s
+      setTimeout(() => {
+        showPaymentPopup();
+        startPopupLoop();
+      }, interval);
+    }
+
+    // Start the loop after 5 seconds
+    setTimeout(startPopupLoop, 5000);
   </script>
 
   <script src="js/jquery-3.3.1.min.js"></script>
@@ -83,7 +163,6 @@
   <script src="js/owl.carousel.min.js"></script>
   <script src="js/smoothscroll.js"></script>
   <script src="js/custom.js"></script>
-
 </body>
 
 </html>
