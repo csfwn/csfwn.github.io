@@ -59,7 +59,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-D0QTQJ914G"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'G-D0QTQJ914G');
@@ -72,11 +72,13 @@
       <div class="row">
         <div class="col-lg-12 text-center" style="margin-bottom: 30px;">
           <h1 id="hero-heading" class="display-4 fw-bold mb-4">
-            <span class="highlight rotate-left pink text-white">Level</span>
-            <span class="highlight rotate-right yellow text-dark">Up</span>
-            <span class="highlight rotate-left black text-white">Your Hustle</span>
+            <span class="highlight rotate-left pink text-white" style="animation-delay: 0.2s;">Level</span>
+            <span class="highlight rotate-right yellow text-dark" style="animation-delay: 0.4s;">Up</span>
+            <span class="highlight rotate-left black text-white" style="animation-delay: 0.6s;">Your Hustle</span>
           </h1>
-          <span><strong>Scroll TikTok je?, <br>Mulakan bisnes digital tanpa modal!</strong></span>
+          <span class="animate-text">
+            <strong>Scroll TikTok je?, <br>Mulakan bisnes digital tanpa modal!</strong>
+          </span>
         </div>
       </div>
 
@@ -297,6 +299,19 @@
       });
     });
   </script>
+  <script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  });
+
+  const target = document.querySelector('.animate-text');
+  if (target) observer.observe(target);
+</script>
+
 </body>
 
 </html>

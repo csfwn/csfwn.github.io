@@ -139,15 +139,61 @@ strong {
   margin-right: 6px;
   border: 2px solid black;
   font-weight: bold;
+  opacity: 0; /* important to start from invisible */
+  animation-fill-mode: both;
 }
 
-.rotate-left {
+
+/* .rotate-left {
   transform: rotate(-2deg);
 }
 
 .rotate-right {
   transform: rotate(2deg);
+} */
+
+/* Keep your existing style */
+.rotate-left {
+  animation: rotateInLeft 0.6s ease-out forwards;
 }
+
+.rotate-right {
+  animation: rotateInRight 0.6s ease-out forwards;
+}
+
+@keyframes rotateInLeft {
+  0% {
+    opacity: 0;
+    transform: rotate(-20deg) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(-2deg) scale(1);
+  }
+}
+
+@keyframes rotateInRight {
+  0% {
+    opacity: 0;
+    transform: rotate(20deg) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(2deg) scale(1);
+  }
+}
+
+.animate-text {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.animate-text.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 .pink {
   background-color: #ff74e1;
