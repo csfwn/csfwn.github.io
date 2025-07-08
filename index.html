@@ -92,12 +92,12 @@
               <h4 style="font-weight: bold; color: red;">RM39.00</h4>
             </div>
             <div class="custom-btn-group">
-              <a href="https://toyyibpay.com/Video-Panduan-Zero-Modal" class="btn btn-lg"
+              <a href="https://toyyibpay.com/Video-Panduan-Zero-Modal" class="btn btn-lg vibrate-btn"
                 style="background-color: black; color: white; border: none; font-size: 16px;">
                 <em><strong>BELI SEKARANG</strong></em>
               </a>
-
             </div>
+
           </div>
         </div>
       </div>
@@ -116,7 +116,7 @@
               <div class="owl-carousel owl-theme">
 
                 <div class="item text-left p-4 bg-light rounded shadow-sm">
-                  <h5 class="fw-bold"><span class="highlight yellow text-dark">Topik 1</span></h5>
+                  <h5 class="fw-bold"><span class="highlight rotate-right yellow text-dark">Topik 1</span></h5>
                   <p><strong>Teknik Cari Topik Produk Digital yang <span style="color: #ff74e1;">High Demand & Senang
                         Jual</span></strong></p>
                   <ul style="padding-left: 20px;">
@@ -129,7 +129,7 @@
                 </div>
 
                 <div class="item text-left p-4 bg-light rounded shadow-sm">
-                  <h5 class="fw-bold"><span class="highlight yellow text-dark">Topik 2</span></h5>
+                  <h5 class="fw-bold"><span class="highlight rotate-right yellow text-dark">Topik 2</span></h5>
                   <p><strong>Cara hasilkan <span v>eBook atau Video Panduan</span></strong></p>
                   <ul style="padding-left: 20px;">
                     <li>Belajar cara hasilkan eBook dari A–Z dengan <strong style="color: #ff74e1;">AI</strong></li>
@@ -141,7 +141,7 @@
                 </div>
 
                 <div class="item text-left p-4 bg-light rounded shadow-sm">
-                  <h5 class="fw-bold"><span class="highlight yellow text-dark">Topik 3</span></h5>
+                  <h5 class="fw-bold"><span class="highlight rotate-right yellow text-dark">Topik 3</span></h5>
                   <p><strong>Cara setup <span style="color: #ff74e1;">Website & Payment Gateway</span></strong></p>
                   <ul style="padding-left: 20px;">
                     <li>Cara setup website jualan paling cepat & mudah<br><span style="color: #ff74e1;">(TAK PERLU
@@ -153,7 +153,7 @@
                 </div>
 
                 <div class="item text-left p-4 bg-light rounded shadow-sm">
-                  <h5 class="fw-bold"><span class="highlight yellow text-dark">Topik 4</span></h5>
+                  <h5 class="fw-bold"><span class="highlight rotate-right yellow text-dark">Topik 4</span></h5>
                   <p><strong>Teknik buat Content <span style="color: #ff74e1;">Mudah Dapat Sales</span></strong></p>
                   <ul style="padding-left: 20px;">
                     <li>Kami tunjukkan <strong style="color: #ff74e1;">Rahsia</strong> hasilkan content mudah convert
@@ -163,7 +163,7 @@
                 </div>
 
                 <div class="item text-left p-4 bg-light rounded shadow-sm">
-                  <h5 class="fw-bold"><span class="highlight yellow text-dark">Topik 5</span></h5>
+                  <h5 class="fw-bold"><span class="highlight rotate-right yellow text-dark">Topik 5</span></h5>
                   <p><strong>Strategi Marketing <span style="color: #ff74e1;">Meta Ads, TikTok Ads & Free Cost
                         Marketing</span></strong></p>
                   <ul style="padding-left: 20px;">
@@ -274,7 +274,7 @@
     }
 
     function startPopupLoop() {
-      const interval = Math.floor(Math.random() * 20000) + 20000; // 20–40s
+      const interval = Math.floor(Math.random() * 2000) + 2000; // 20–40s
       setTimeout(() => {
         showPaymentPopup();
         startPopupLoop();
@@ -300,17 +300,17 @@
     });
   </script>
   <script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-      }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
     });
-  });
 
-  const target = document.querySelector('.animate-text');
-  if (target) observer.observe(target);
-</script>
+    const target = document.querySelector('.animate-text');
+    if (target) observer.observe(target);
+  </script>
 
 </body>
 
